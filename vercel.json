@@ -1,7 +1,6 @@
 {
   "rewrites": [
     { "source": "/andres", "destination": "/index.html" },
-    { "source": "/andres/(.*)", "destination": "/index.html" },
     { "source": "/gym", "destination": "/index.html" },
     { "source": "/baseball", "destination": "/index.html" }
   ]
