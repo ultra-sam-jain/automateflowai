@@ -1,5 +1,4 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
 import './andresSite.css';
 const A=({children,href,primary=false}:any)=><a className={`af-btn ${primary?'primary':'secondary'}`} href={href}>{children}</a>;
 function Layout({eyebrow,heading,description,children}:any){return <div className="andres-site"><header className="andres-nav"><a href="/andres" className="andres-brand">ANDRES TARAZONA, CSCS<span>HIGH PERFORMANCE • LAS VEGAS</span></a><nav><a href="/andres/athletes">Athletes</a><a href="/andres/baseball">Baseball</a><a href="/andres/gym">Gyms & Academies</a><a href="/andres/about">About</a></nav></header><main><section className="andres-hero"><div className="wrap"><div className="eyebrow">{eyebrow}</div><h1>{heading}</h1><p>{description}</p></div></section><section className="andres-content"><div className="wrap">{children}</div></section></main><footer className="andres-footer"><div className="wrap"><div><strong>Andres Tarazona, CSCS</strong><br/>Las Vegas, Nevada</div><div><a href="tel:14076248152">407-624-8152</a><br/><a href="mailto:tarazona.andres.018@gmail.com">tarazona.andres.018@gmail.com</a></div></div></footer></div>}
