@@ -1,7 +1,7 @@
+import { createRoot } from "react-dom/client";
+import App from "./app/App.tsx";
+import AndresSite from "./andresSite.tsx";
+import "./styles/index.css";
 
-  import { createRoot } from "react-dom/client";
-  import App from "./app/App.tsx";
-  import "./styles/index.css";
-
-  createRoot(document.getElementById("root")!).render(<App />);
-  
+const isAndres = window.location.pathname === "/andres" || window.location.pathname.startsWith("/andres/");
+createRoot(document.getElementById("root")!).render(isAndres ? <AndresSite /> : <App />);
