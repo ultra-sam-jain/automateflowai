@@ -1,0 +1,54 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import './andresSite.css';
+
+const A = ({ children, href, primary = false }: any) => (
+  <a className={`af-btn ${primary ? 'primary' : 'secondary'}`} href={href}>{children}</a>
+);
+
+function Layout({ title, eyebrow, heading, description, children }: any) {
+  return <div className="andres-site">
+    <header className="andres-nav">
+      <a href="/andres" className="andres-brand">ANDRES TARAZONA, CSCS<span>HIGH PERFORMANCE • LAS VEGAS</span></a>
+      <nav><a href="/andres/athletes">Athletes</a><a href="/andres/baseball">Baseball</a><a href="/andres/gym">Gyms & Academies</a><a href="/andres/about">About</a></nav>
+    </header>
+    <main>
+      <section className="andres-hero"><div className="wrap"><div className="eyebrow">{eyebrow}</div><h1>{heading}</h1><p>{description}</p></div></section>
+      <section className="andres-content"><div className="wrap">{children}</div></section>
+    </main>
+    <footer className="andres-footer"><div className="wrap"><div><strong>Andres Tarazona, CSCS</strong><br/>Las Vegas, Nevada</div><div><a href="tel:14076248152">407-624-8152</a><br/><a href="mailto:tarazona.andres.018@gmail.com">tarazona.andres.018@gmail.com</a></div></div></footer>
+  </div>
+}
+
+function Home(){return <Layout eyebrow="High Performance • Strength & Conditioning • Baseball Performance" heading="Train with purpose. Perform with confidence." description="Individualized performance coaching for athletes, baseball players and organizations in Las Vegas — grounded in professional sports, human performance and data-informed training.">
+<div className="choice-grid"><div className="choice"><span>FOR ATHLETES</span><h2>Know what to train next.</h2><p>Start with a focused performance assessment and get practical direction.</p><A href="/andres/athletes" primary>View athlete services →</A></div><div className="choice"><span>FOR FACILITIES</span><h2>Add a performance layer.</h2><p>Complement your gym or baseball academy with specialized physical-performance services.</p><A href="/andres/gym">Explore partnerships →</A></div></div>
+<div className="stat-row"><div><b>10+</b><span>years of S&C experience</span></div><div><b>CSCS</b><span>NSCA credential</span></div><div><b>Rapsodo</b><span>Hitting + Pitching</span></div><div><b>Pro + Military</b><span>Performance background</span></div></div>
+<div className="cred-row"><span>Oakland Athletics</span><span>Detroit Tigers</span><span>Baltimore Orioles</span><span>U.S. Air Force</span><span>U.S. Army</span><span>Chinese Olympic Committee</span></div>
+</Layout>}
+
+function Athletes(){return <Layout eyebrow="For Athletes & Parents" heading="Know what to train next." description="A focused assessment to understand your goals, identify priorities and leave with practical next steps.">
+<div className="offer"><div><span className="tag">START HERE</span><h2>$75 Athlete Performance Assessment</h2><p>45 minutes focused on your sport, goals, movement, strength & conditioning needs, speed/power considerations and the priorities that matter most.</p><ul><li>Discuss your sport, goals and training history</li><li>Review relevant movement and physical-performance needs</li><li>Identify strength, conditioning, speed and power priorities</li><li>Leave with practical recommendations and next steps</li></ul><A href="mailto:tarazona.andres.018@gmail.com?subject=Athlete%20Performance%20Assessment" primary>Request an assessment</A></div><div className="price-box"><b>$75</b><span>45 minutes</span></div></div>
+<div className="offer secondary-offer"><div><span className="tag">BASEBALL</span><h2>$100 Baseball Performance Session</h2><p>Physical-performance work around strength, speed, movement, conditioning and athletic preparation. Andres holds Rapsodo Hitting and Pitching certifications and has professional baseball performance experience.</p><A href="mailto:tarazona.andres.018@gmail.com?subject=Baseball%20Performance%20Session">Ask about a baseball session</A></div></div>
+<div className="faq"><h2>Common questions</h2><p><strong>Who is this for?</strong> Youth, high-school, college and adult athletes, plus baseball players seeking individualized physical-performance guidance.</p><p><strong>Do I need a long-term package?</strong> No. The assessment is designed as a clear first step.</p><p><strong>Is this medical care?</strong> No. It is performance coaching and training guidance, not medical diagnosis or physical therapy.</p></div>
+</Layout>}
+
+function Baseball(){return <Layout eyebrow="For Baseball Players & Academies" heading="Build the physical side of baseball performance." description="Strength • Speed • Movement • Conditioning • Physical Preparation">
+<div className="choice-grid"><div className="choice"><span>FOR PLAYERS</span><h2>$100 Baseball Performance Session</h2><p>Focused on the physical side of baseball performance and individualized training priorities.</p><A href="mailto:tarazona.andres.018@gmail.com?subject=Baseball%20Performance%20Session" primary>Ask about a session</A></div><div className="choice"><span>FOR ACADEMIES</span><h2>Add a complementary performance layer.</h2><p>Keep your existing hitting and pitching instruction while adding strength, speed, movement and conditioning support.</p><A href="mailto:tarazona.andres.018@gmail.com?subject=Baseball%20Academy%20Partnership">Discuss an academy partnership</A></div></div>
+<div className="grid"><div className="card"><h3>Strength & Conditioning</h3><p>Structured physical preparation that complements skill instruction.</p></div><div className="card"><h3>Speed & Power</h3><p>Build physical qualities that support athletic development.</p></div><div className="card"><h3>Movement & Preparation</h3><p>Practical work around movement quality, conditioning and readiness.</p></div></div>
+<div className="credentials"><h2>Andres's baseball background</h2><p>Professional baseball performance experience with the Oakland Athletics, Detroit Tigers and Baltimore Orioles, plus Rapsodo Hitting and Pitching certifications.</p></div>
+</Layout>}
+
+function Gym(){return <Layout eyebrow="For Gyms & Fitness Facilities" heading="Add a high-performance layer to your facility." description="Specialized strength & conditioning, speed, movement, conditioning and athlete-development services that complement what you already offer.">
+<div className="grid"><div className="card"><h3>1:1 Performance</h3><p>Individual assessments and performance sessions.</p></div><div className="card"><h3>Small Groups</h3><p>Athletic development and performance-focused group work.</p></div><div className="card"><h3>Specialized Programming</h3><p>Strength, speed, power and conditioning support for athletes.</p></div></div>
+<div className="pilot"><span className="tag">LOW-RISK PILOT</span><h2>Meet → Design → Pilot → Review</h2><p>Start small. Define the service, schedule, pricing and facility arrangement, run a limited pilot, then expand what works.</p><A href="mailto:tarazona.andres.018@gmail.com?subject=Gym%20Partnership" primary>Discuss a partnership</A></div>
+<div className="credentials"><h2>Why Andres?</h2><p>CSCS (NSCA), professional baseball performance experience, U.S. Air Force and U.S. Army human-performance experience, Chinese Olympic Committee and collegiate athletics experience.</p></div>
+</Layout>}
+
+function About(){return <Layout eyebrow="About Andres" heading="High-performance experience, applied locally." description="Andres Tarazona is a Certified Strength & Conditioning Specialist focused on human performance, athlete development, strength & conditioning and performance preparation.">
+<div className="grid"><div className="card"><h3>Professional Baseball</h3><p>Oakland Athletics • Detroit Tigers • Baltimore Orioles</p></div><div className="card"><h3>Military Human Performance</h3><p>U.S. Air Force • U.S. Army</p></div><div className="card"><h3>International & Collegiate</h3><p>Chinese Olympic Committee • Florida International University • University of Miami • North Carolina Central University</p></div></div>
+<div className="credentials"><h2>Credentials</h2><div className="cred-row"><span>CSCS — NSCA</span><span>Rapsodo Hitting</span><span>Rapsodo Pitching</span><span>Myokinematic Restoration</span><span>CPR & AED</span></div></div>
+</Layout>}
+
+function App(){const p=window.location.pathname.replace(/\/$/,''); if(p==='/andres/athletes')return <Athletes/>; if(p==='/andres/baseball')return <Baseball/>; if(p==='/andres/gym')return <Gym/>; if(p==='/andres/about')return <About/>; return <Home/>}
+
+const root=document.getElementById('andres-root'); if(root) createRoot(root).render(<App/>);
