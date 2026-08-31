@@ -12,6 +12,8 @@ const isAndresRoute = [
   "/baseball",
 ].includes(path);
 
+// The Andres site only owns explicitly published paths.
+// Unknown paths must use the original AutomateFlow 404/route behavior.
 createRoot(document.getElementById("root")!).render(
   isAndresRoute ? <AndresSite /> : <App />
 );
