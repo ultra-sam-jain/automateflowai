@@ -4,7 +4,6 @@
     { "source": "/andres/athletes", "destination": "/index.html" },
     { "source": "/andres/about", "destination": "/index.html" },
     { "source": "/gym", "destination": "/index.html" },
-    { "source": "/baseball", "destination": "/index.html" },
-    { "source": "/((?!api/|assets/|img/|favicon.ico|robots.txt|sitemap.xml).*)", "destination": "/index.html" }
+    { "source": "/baseball", "destination": "/index.html" }
   ]
 }
