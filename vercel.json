@@ -1,12 +1,12 @@
 {
-  "rewrites": [
-    { "source": "/andres", "destination": "/index.html" },
-    { "source": "/andres/athletes", "destination": "/index.html" },
-    { "source": "/andres/about", "destination": "/index.html" },
-    { "source": "/gym", "destination": "/index.html" },
-    { "source": "/baseball", "destination": "/index.html" }
-  ],
-  "redirects": [
-    { "source": "/andres/(.*)", "destination": "/", "permanent": false }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    { "src": "/andres/?$", "dest": "/index.html" },
+    { "src": "/andres/athletes/?$", "dest": "/index.html" },
+    { "src": "/andres/about/?$", "dest": "/index.html" },
+    { "src": "/gym/?$", "dest": "/index.html" },
+    { "src": "/baseball/?$", "dest": "/index.html" },
+    { "handle": "filesystem" },
+    { "src": "/.*", "status": 307, "headers": { "Location": "/" } }
   ]
 }
