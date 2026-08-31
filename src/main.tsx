@@ -4,16 +4,19 @@ import AndresSite from "./andresSite.tsx";
 import "./styles/index.css";
 
 const path = window.location.pathname.replace(/\/$/, "") || "/";
-const isAndresRoute = [
+const publishedAndresRoutes = [
   "/andres",
   "/andres/athletes",
   "/andres/about",
   "/gym",
   "/baseball",
-].includes(path);
+];
+const isAndresRoute = publishedAndresRoutes.includes(path);
 
-// The Andres site only owns explicitly published paths.
-// Unknown paths must use the original AutomateFlow 404/route behavior.
+if (path !== "/" && !isAndresRoute) {
+  window.location.replace("/");
+}
+
 createRoot(document.getElementById("root")!).render(
   isAndresRoute ? <AndresSite /> : <App />
 );
