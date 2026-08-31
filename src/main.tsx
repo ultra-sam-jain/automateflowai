@@ -12,9 +12,6 @@ const isAndresRoute = [
   "/baseball",
 ].includes(path);
 
-// Only the explicitly published Andres pages use the Andres site.
-// Any other path falls back to the existing AutomateFlow home experience,
-// preserving the old behavior for unknown URLs without changing the URL.
 createRoot(document.getElementById("root")!).render(
   isAndresRoute ? <AndresSite /> : <App />
 );
